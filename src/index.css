@@ -2,8 +2,12 @@
 
 :root{
   --chambray: #49557e;
+  --gay: #747474;
+  --black-800: #262626;
   --tomato: tomato;
   --white:#fff;
+  --white-200:#e2e2e2;
+  --gray-400: #676767l;
 }
 
 *{
@@ -28,3 +32,13 @@ a{
   margin: auto;
 }
 
+
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 100;
+  }
+}
