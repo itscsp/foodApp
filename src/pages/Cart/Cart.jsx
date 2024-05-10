@@ -4,7 +4,8 @@ import { StoreContext } from "../../context/StoreContext";
 import { food_list } from "../../assets/assets";
 
 const Cart = () => {
-  const { cartItems, addToCart, removeFromCart } = useContext(StoreContext);
+  const { cartItems, removeFromCart } = useContext(StoreContext);
+
   return (
     <div className="cart">
       <div className="cart-items">
@@ -22,14 +23,14 @@ const Cart = () => {
           if (cartItems[item._id] > 0) {
             return (
               <div key={index}>
-                <div className="cart-items-title cart-items-item">
+                <div className="cart-items-title cart-items-item"> 
                   <img src={item.image} alt="cart-item-image" />
                   <p>{item.name}</p>
                   <p>{item.price}</p>
                   <p>{cartItems[item._id]}</p>
                   <p>{item.price * cartItems[item._id]}</p>
-                  <p className="cross" onClick={() => removeFromCart(cartItems[item._id])}>x</p>
-                </div>
+                  <p className="cross" onClick={() => removeFromCart(item._id)}>x</p>
+                </div> 
                 <hr />
               </div>
             );
