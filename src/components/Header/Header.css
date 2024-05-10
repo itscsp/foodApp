@@ -40,3 +40,41 @@
     font-size: 1rem;
     border-radius: 50px;
 }
+
+@media (max-width:1050px){
+
+    .header-contents h2{
+        font-size: 3rem;
+    }
+    .header{
+        height: 450px;
+    }
+
+    .header-contents{
+        max-width: 65%; 
+    }
+}
+
+
+
+@media (max-width:750px){
+    .header{
+        height: 300px;
+    }
+    .header-contents h2{
+        font-size: 2.5rem;
+    }
+
+    .header-contents{
+        max-width: 55%;
+    } 
+
+    .header-contents p {
+        display: none;
+    } 
+
+    
+    .header-contents button{
+        padding: 0.8rem 1.5rem;
+    }
+}
