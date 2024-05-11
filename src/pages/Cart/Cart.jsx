@@ -2,9 +2,10 @@ import React, { useContext } from "react";
 import "./Cart.css";
 import { StoreContext } from "../../context/StoreContext";
 import { food_list } from "../../assets/assets";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const { cartItems, removeFromCart } = useContext(StoreContext);
+  const { cartItems, removeFromCart, getTotalCartAmount } = useContext(StoreContext);
 
   return (
     <div className="cart">
@@ -43,7 +44,7 @@ const Cart = () => {
           <div className="">
             <div className="cart-total-details">
               <p>Subtotal</p>
-              <p>{0}</p>
+              <p>{getTotalCartAmount()}</p>
             </div>
             <hr />
             <div className="cart-total-details">
@@ -53,17 +54,17 @@ const Cart = () => {
             <hr />
             <div className="cart-total-details">
               <p>Total</p>
-              <p>{0}</p>
+              <p>{getTotalCartAmount() + 2}</p>
             </div>
             <hr />
           </div>
-            <button>Proceed to Checkout</button>
+            <Link className="btn" to={'/order'}>Proceed to Checkout</Link>
         </div>
-        <div className="cart-promocode">
+        <div className="cart-promocode"> 
           <div>
             <p>If you have a promo code, Enter it here</p>
             <div className="cart-promocode-input">
-              <input type="text"  placeholder="promo code"/>
+              <input type="text"  placeholder="promo code"/>  
               <button>Submit</button>
             </div>
           </div>
@@ -74,3 +75,4 @@ const Cart = () => {
 };
 
 export default Cart;
+ 
