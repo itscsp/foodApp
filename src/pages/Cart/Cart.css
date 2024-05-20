@@ -54,14 +54,15 @@
 
 }
 
-.cart-total button{ 
+.cart-total .btn{ 
     border: none;
     color: #fff;
     background-color: var(--tomato);
     max-width: 300px;
     width: 100%;
-    padding: 12px 0px;
+    padding: 12px 10px;
     border-radius: 4px; 
+    text-align: center;
 }
 
 .cart-promocode{
@@ -90,14 +91,14 @@
 
 } 
 
-.cart-promocode a.btn{ 
+.cart-promocode button{ 
   display: inline-block;
     max-width: 150px;
     width: 100%;
     padding: 12px 5px;
     background-color: black;
     border: none;
-    color: white;
+    color: white; 
 }
 
 @media (max-width:750px){

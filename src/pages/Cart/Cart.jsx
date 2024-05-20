@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { cartItems, removeFromCart, getTotalCartAmount } = useContext(StoreContext);
-
+ 
   return (
     <div className="cart">
       <div className="cart-items">
@@ -17,7 +17,7 @@ const Cart = () => {
           <p>Quantity</p>
           <p>Total</p>
           <p>Remove</p>
-        </div>
+        </div> 
         <br />
         <hr />
         {food_list.map((item, index) => {
@@ -49,12 +49,12 @@ const Cart = () => {
             <hr />
             <div className="cart-total-details">
               <p>Deliver Fee</p>
-              <p>{2}</p>
+              <p>{getTotalCartAmount() ? '$2' : 0}</p>
             </div>
             <hr />
             <div className="cart-total-details">
               <p>Total</p>
-              <p>{getTotalCartAmount() + 2}</p>
+              <p>${getTotalCartAmount() ? getTotalCartAmount() + 2 : 0}</p>
             </div>
             <hr />
           </div>
@@ -65,7 +65,7 @@ const Cart = () => {
             <p>If you have a promo code, Enter it here</p>
             <div className="cart-promocode-input">
               <input type="text"  placeholder="promo code"/>  
-              <button>Submit</button>
+              <button>Submit</button> 
             </div>
           </div>
         </div>
