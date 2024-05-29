@@ -1,18 +1,18 @@
 import React, { useContext, useState } from "react";
 import "./FoodItem.css";
-import { assets, food_list } from "../../assets/assets";
+import { assets} from "../../assets/assets";
 import { StoreContext } from "../../context/StoreContext";
 
 const FoodItem = ({ id, name, price, description, image }) => {
   const [itemCount, setItemCount] = useState(0);
 
-  const {cartItems, addToCart, removeFromCart} = useContext(StoreContext);
+  const {cartItems, addToCart, removeFromCart, url} = useContext(StoreContext); // Usecontext API Intigration
 
 
   return (
     <div className="food-item">
       <div className="food-item-img-container">
-        <img className="food-item-img" src={image} alt={name} />
+        <img className="food-item-img" src={url+"/images/"+image} alt={name} />
         {!cartItems[id] ? (
           <img className="add"
             onClick={() => addToCart(id)}
