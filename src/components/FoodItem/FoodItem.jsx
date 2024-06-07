@@ -4,6 +4,7 @@ import { assets} from "../../assets/assets";
 import { StoreContext } from "../../context/StoreContext";
 
 const FoodItem = ({ _id, name, price, description, image }) => {
+
   const [itemCount, setItemCount] = useState(0);
 
   const {cartItems, addToCart, removeFromCart, url} = useContext(StoreContext); // Usecontext API Intigration
@@ -15,15 +16,15 @@ console.log(cartItems);
         <img className="food-item-img" src={url+"/images/"+image} alt={name} />
         {!cartItems[_id] ? (
           <img className="add"
-            onClick={() => addToCart(id)}
+            onClick={() => addToCart(_id)}
             src={assets.add_icon_white} 
             alt="add_icom"
           />
         ) : (
           <div className="food-item-counter">
-            <img onClick={() => removeFromCart(id)} src={assets.remove_icon_red} alt="remove_icon_red" />
-            <p>{cartItems[id]}</p>
-            <img onClick={() => addToCart(id)} src={assets.add_icon_green} alt="add_icon_green" />
+            <img onClick={() => removeFromCart(_id)} src={assets.remove_icon_red} alt="remove_icon_red" />
+            <p>{cartItems[_id]}</p>
+            <img onClick={() => addToCart(_id)} src={assets.add_icon_green} alt="add_icon_green" />
           </div>
         )}
       </div>
