@@ -19,10 +19,11 @@ const MyOrders = () => {
     useEffect(() => {
         if (token) {
             fetchOrders();
-        }
+        } 
     }, [token])
 
     return (
+        
         <div className='myorders'>
             <h2>My Orders</h2>
             <div className="container">
