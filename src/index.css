@@ -22,6 +22,10 @@ body{
   min-height: 100vh;
 }
 
+body.overflow-hidden{
+  overflow: hidden;
+}
+
 a{
   text-decoration: none;
   color: inherit;

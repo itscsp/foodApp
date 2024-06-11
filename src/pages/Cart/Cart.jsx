@@ -4,8 +4,8 @@ import { StoreContext } from "../../context/StoreContext";
 // import { food_list } from "../../assets/assets";
 import { Link } from "react-router-dom";
 
-const Cart = () => {
-  const { cartItems, food_list, removeFromCart, getTotalCartAmount, url } = useContext(StoreContext);
+const Cart = ({setShowLogin}) => {
+  const { cartItems, food_list, removeFromCart, getTotalCartAmount, url, token } = useContext(StoreContext);
  
   return (
     <div className="cart">
@@ -58,7 +58,10 @@ const Cart = () => {
             </div>
             <hr />
           </div>
-            <Link className="btn" to={'/order'}>Proceed to Checkout</Link>
+          {!token && <button className="btn"  onClick={() => setShowLogin(true)} >Proceed to Checkout</button>}
+          {token && <Link className="btn" to={'/order'}>Proceed to Checkout</Link>}
+
+            
         </div>
         <div className="cart-promocode"> 
           <div>
