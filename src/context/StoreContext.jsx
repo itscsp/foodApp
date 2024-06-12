@@ -2,12 +2,14 @@ import { createContext, useEffect, useState } from "react";
 // import { food_list } from "../assets/assets"; //Now we are getting this data from backend
 import axios from "axios";
 
+
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
+
     const [cartItems, setCartItems] = useState({});
     const [food_list, setFoodList] = useState([])
-    const url = 'http://localhost:4000'; 
+    const url = `${__BASE_URL__}`; 
     const [token, setToken] = useState("");
 
 
